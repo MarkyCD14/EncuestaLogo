@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,6 +28,11 @@
         }
         header h1 {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombreado del texto */
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #ffffff;
         }
         .container {
             margin-top: 20px;
@@ -93,6 +98,9 @@
 <body>
     <header>
         <h1>Encuesta de Logo Spectrum Photography</h1>
+        <p>Ayúdame a elegir el logo que mejor represente a Spectrum Photography. Tu opinión es muy importante para nosotros. 
+           
+            Para enviar tu respuesta ingresa tu cuenta de Google.</p>
     </header>
 
     <div class="container">
@@ -154,14 +162,14 @@
 
             try {
                 const response = await fetch('https://encuestaspectrum.vercel.app/api/submit', { 
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-             },
-             body: JSON.stringify(data),
-            });
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
 
-             if (response.ok) {
+                if (response.ok) {
                     alert('¡Gracias por tu participación!');
                     form.reset();
                     logos.forEach(img => img.classList.remove('selected'));
