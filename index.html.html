@@ -19,12 +19,15 @@
             background-color: #f4f4f9;
         }
         header {
-            background-color:rgba(124, 20, 12, 0.938);
+            background-color: rgba(124, 20, 12, 0.938);
             color: white;
             padding: 15px 30px;
             width: 100%;
             text-align: center;
             font-family: 'Pirata One', sans-serif; /* Aplicar la fuente Pirata One al título */
+        }
+        header h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombreado del texto */
         }
         .container {
             margin-top: 20px;
@@ -48,26 +51,29 @@
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            font-size: 16px; /* Ajuste para móviles */
         }
         .logos {
             display: flex;
+            flex-wrap: wrap; /* Permitir ajuste en móviles */
             justify-content: space-around;
             margin: 20px 0;
         }
         .logo {
             text-align: center;
-            flex: 1;
+            flex: 1 1 200px; /* Ajustar tamaño para móviles */
             padding: 10px;
         }
         .logo img {
-            width: 200px;
+            width: 100%; /* Ajuste automático */
+            max-width: 200px; /* Máximo tamaño */
             height: auto;
             cursor: pointer;
             border: 2px solid transparent;
             border-radius: 5px;
         }
         .logo img.selected {
-            border-color: #d0ff00;
+            border-color: #d0ff00; /* Color amarillo cuando está seleccionado */
         }
         button {
             background-color: #000000;
@@ -77,13 +83,11 @@
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
+            font-size: 16px; /* Tamaño adecuado para móviles */
         }
         button:hover {
-            background-color: #000000;
+            background-color: #333333;
         }
-    </style>
-    <style>
-        header h1 {text-shadow: 2px 2px 4px rgba(0, 0, 0, 8); /* Configura el sombreado del texto */}
     </style>
 </head>
 <body>
