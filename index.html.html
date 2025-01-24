@@ -153,15 +153,15 @@
             console.log('Datos enviados:', data);
 
             try {
-                const response = await fetch('https://tu-proyecto.vercel.app/api/submit', { 
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-});
+                const response = await fetch('https://encuestapectrum.vercel.app/api/submit', { 
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+             },
+             body: JSON.stringify(data),
+            });
 
-                if (response.ok) {
+             if (response.ok) {
                     alert('¡Gracias por tu participación!');
                     form.reset();
                     logos.forEach(img => img.classList.remove('selected'));
