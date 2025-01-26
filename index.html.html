@@ -24,10 +24,10 @@
             padding: 15px 30px;
             width: 100%;
             text-align: center;
-            font-family: 'Pirata One', sans-serif; /* Aplicar la fuente Pirata One al título */
+            font-family: 'Pirata One', sans-serif;
         }
         header h1 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombreado del texto */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
         header p {
             margin-top: 10px;
@@ -56,29 +56,43 @@
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 16px; /* Ajuste para móviles */
+            font-size: 16px;
+        }
+        input::placeholder {
+            font-style: italic;
+            color: #aaa;
         }
         .logos {
             display: flex;
-            flex-wrap: wrap; /* Permitir ajuste en móviles */
+            flex-wrap: wrap;
             justify-content: space-around;
             margin: 20px 0;
         }
         .logo {
             text-align: center;
-            flex: 1 1 200px; /* Ajustar tamaño para móviles */
+            flex: 1 1 200px;
             padding: 10px;
         }
         .logo img {
-            width: 100%; /* Ajuste automático */
-            max-width: 200px; /* Máximo tamaño */
+            width: 100%;
+            max-width: 200px;
             height: auto;
             cursor: pointer;
             border: 2px solid transparent;
             border-radius: 5px;
+            transition: transform 0.2s ease-in-out;
         }
         .logo img.selected {
-            border-color: #ffbb00; /* Color amarillo cuando está seleccionado */
+            border-color: #ffbb00;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
         button {
             background-color: #000000;
@@ -88,34 +102,67 @@
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            font-size: 16px; /* Tamaño adecuado para móviles */
+            font-size: 16px;
         }
         button:hover {
             background-color: #333333;
+        }
+        footer {
+            background: linear-gradient(45deg, rgba(124, 20, 12, 0.938), #6b1111);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        footer a {
+            color: white;
+            margin-left: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+            color: #ffbb00;
+        }
+        footer img {
+            width: 25px;
+            height: 25px;
+            margin-left: 10px;
+            transition: transform 0.2s;
+        }
+        footer img:hover {
+            transform: scale(1.2);
+        }
+        @media (max-width: 600px) {
+            footer {
+                font-size: 14px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Encuesta de Logo Spectrum Photography</h1>
-        <p style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); font-size: 18px; color: #ffffff;">
-            Ayúdame a elegir el logo que mejor represente a Spectrum Photography. Tu opinión es muy importante para nosotros. 
-            Para enviar tu respuesta ingresa tu cuenta de Google.
-        </p> 
-        <p style="margin-top: 10px; font-size: 16px; font-style: italic; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">
-            Por tu elección obtendrás un cupón de 15% de descuento en alguna sesión o trabajo fotográfico que desees.
-        </p>
+        <p>Ayúdame a elegir el logo que mejor represente a Spectrum Photography. Tu opinión es muy importante para nosotros. </p>
+        <p style="margin-top: 10px; font-size: 16px; font-style: italic;">Por tu elección obtendrás un cupón de 15% de descuento en alguna sesión o trabajo fotográfico que desees.</p>
     </header>
 
     <div class="container">
         <form id="surveyForm">
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
             </div>
             <div class="form-group">
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="Crea una contraseña segura" required>
             </div>
 
             <div class="logos">
@@ -134,27 +181,13 @@
             </div>
 
             <button type="submit">Enviar</button>
-            <footer style="
-            background-color: rgba(124, 20, 12, 0.938);
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 20px;
-            border-radius: 10px; /* Esquinas redondeadas */
-            width: 90%; /* Ajustar al ancho del contenido */
-            max-width: 800px; /* Máximo ancho */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombras suaves */
-            margin-left: auto;
-            margin-right: auto;
-        ">
-            <p style="font-size: 18px; margin: 0; display: flex; justify-content: center; align-items: center;">
-                <span>Sígueme en Instagram como: </span>
-                <a href="https://instagram.com/thespectrum_phtgrphy" target="_blank" style="color: white; margin-left: 5px; text-decoration: none; font-weight: bold;">@thespectrum_phtgrphy</a>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 25px; height: 25px; margin-left: 10px;">
+        </form>
+        <footer>
+            <p>Sígueme en Instagram como: 
+                <a href="https://instagram.com/thespectrum_phtgrphy" target="_blank">@thespectrum_phtgrphy</a>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
             </p>
         </footer>
-        
-        </form>
     </div>
 
     <script>
